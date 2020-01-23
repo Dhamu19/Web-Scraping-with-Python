@@ -1,0 +1,30 @@
+from bs4 import BeautifulSoup
+import requests
+
+
+source = requests.get('http://coreyms.com').text                    # got the source code from the website using requests library
+
+soup = BeautifulSoup(source, 'lxml')                                # pass source onto beautiful soup
+
+article = soup.find('article')                                      # grabs all the info from the first article from the site
+
+#print(article.prettify())                                           # should print out the html of the first article
+
+
+#headline = article.h2.a.text
+#print(headline)                                                    # would show the headline title
+
+#summary = article.find('div', class_='entry-content').p.text       # will return the tag for the paragraph div and parse out the first paragraph
+#print(summary)                                                     # will show the parsed out summary text for that post
+
+vid_src = article.find('iframe', class_='youtube-player')['src']   # will get the link to the embedded video
+print(vid_src)
+
+vid_id = vid_src.split('/')[4]                                     # will split the string based on forward slashes, the id is in the fourth index, hence '4'
+vid_id = vid_id.split('?')[0]                                      # will split the string based on the question mark so it separates the video id, the id is in the zeroth index, hence '0'
+print(vid_id)
+
+
+
+
+
