@@ -1,2 +1,2 @@
 # Web-Scraping-with-Python
-Built a tool that takes URL as input and returns the contents of the URL as HTML or XML
+In this Python Programming Code, i used a library called BeautifulSoup to scrape websites. BeautifulSoup is an excellent tool for parsing HTML code and grabbing exactly the information you need. So whether you're pulling down headlines from news sites, scores from sports websites, or prices from an online store, BeautifulSoup and Python will help you get this done quickly and easily.
